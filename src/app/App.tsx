@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { MainPageLazy } from './pages/main-page/MainPageLazy'
-import { AboutPageLazy } from './pages/about-page/AboutPageLazy'
+import { MainPageLazy } from '../pages/main-page'
+import { AboutPageLazy } from '../pages/about-page'
 import { Suspense } from 'react'
 import './styles/index.scss'
-import { useTheme } from './theme/useTheme'
-import { clss } from './utils/clss'
+import { useTheme } from '../shared/lib/theme'
+import { clss } from '../shared/lib/clss/clss'
 
 export const App = () => {
   const {theme, toggleTheme} = useTheme()

@@ -1,6 +1,6 @@
 import { render } from "react-dom";
-import { App } from "./App";
-import { ThemeProvider } from "./theme/themeProvider";
+import { App } from "./app/App";
+import { ThemeProvider } from "./shared/lib/theme";
 
 render(
   <ThemeProvider>
