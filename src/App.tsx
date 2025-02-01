@@ -5,12 +5,13 @@ import { AboutPageLazy } from './pages/about-page/AboutPageLazy'
 import { Suspense } from 'react'
 import './styles/index.scss'
 import { useTheme } from './theme/useTheme'
+import { clss } from './utils/clss'
 
 export const App = () => {
   const {theme, toggleTheme} = useTheme()
   
   return (
-    <div className={`app ${theme}`}>
+    <div className={clss('app', theme)}>
       <button onClick={toggleTheme}>Toggle theme</button>
       <BrowserRouter>
           <Link to={'/'}>Главная</Link>
