@@ -4,11 +4,10 @@ import { clss } from '../shared/lib/clss/clss'
 import { AppRouter } from './router'
 
 export const App = () => {
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
   
   return (
     <div className={clss('app', theme)}>
-      <button onClick={toggleTheme}>Toggle theme</button>
       <AppRouter/>
     </div>
   )

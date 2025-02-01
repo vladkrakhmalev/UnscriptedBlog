@@ -3,8 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font: var(--font-m);
-  background-color: var(--bg-primary);
   color: var(--text-primary);
+  transition: .2s;
+}
+
+.app {
+  background-color: var(--bg-primary);
 }
 
 a {

@@ -1,0 +1,22 @@
+.header {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    
+  }
+
+  &__nav {
+    display: flex;
+    gap: 20px;
+
+    &-link {
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}
