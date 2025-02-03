@@ -4,10 +4,6 @@
   justify-content: space-between;
   align-items: center;
 
-  &__logo {
-    
-  }
-
   &__nav {
     display: flex;
     gap: 20px;
@@ -18,5 +14,10 @@
         opacity: .7;
       }
     }
+  }
+
+  &__theme-icon {
+    cursor: pointer;
+    stroke: var(--text-light);
   }
 }

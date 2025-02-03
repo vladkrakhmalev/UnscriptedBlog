@@ -1,15 +1,18 @@
 import { FC } from 'react';
 import './Button.scss'
+import { clss } from '../../lib/clss';
 
 interface IProps {
-  onClick?: () => void
+  icon?: React.ReactNode
   children?: React.ReactNode | string
+  onClick?: () => void
 }
 
-export const Button: FC<IProps> = ({ onClick, children }) => {
+export const Button: FC<IProps> = ({ icon, children, onClick }) => {
 
   return (
-    <button className='button' onClick={onClick}>
+    <button className={clss('button', { '_icon': !!icon })} onClick={onClick}>
+      {icon && icon}
       {children}
     </button>
   );

@@ -11,4 +11,10 @@
     box-shadow: 0 0 30px var(--shadow-primary);
     background-color: var(--color-primary-hover);
   }
+
+  &._icon {
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 1;
+  }
 }

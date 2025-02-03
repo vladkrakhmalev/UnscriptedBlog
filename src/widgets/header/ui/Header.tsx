@@ -3,6 +3,7 @@ import './Header.scss'
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../../shared/lib/theme';
 import { Button } from '../../../shared/ui/button';
+import SunIcon from '../../../shared/assets/icons/sun.svg'  
 
 interface IProps {
 
@@ -20,9 +21,7 @@ export const Header: FC<IProps> = ({}) => {
         <Link to='/about' className='header__nav-link'>About</Link>
       </nav>
 
-      <Button onClick={toggleTheme}>
-        Change theme
-      </Button>
+      <Button onClick={toggleTheme} icon={<SunIcon stroke='#fff'/>} />
     </div>
   );
 };
