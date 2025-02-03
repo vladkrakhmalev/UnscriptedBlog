@@ -20,4 +20,10 @@
     cursor: pointer;
     stroke: var(--text-light);
   }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
