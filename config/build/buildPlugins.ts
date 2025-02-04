@@ -2,6 +2,7 @@ import webpack, { WebpackPluginInstance } from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { IBuildOptions } from './types/config'
+import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 export function buildPlugins({paths, isDev}: IBuildOptions): WebpackPluginInstance[] {
   
@@ -17,5 +18,7 @@ export function buildPlugins({paths, isDev}: IBuildOptions): WebpackPluginInstan
     new webpack.DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshPlugin(),
   ]
 }
