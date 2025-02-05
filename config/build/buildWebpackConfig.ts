@@ -1,4 +1,3 @@
-import path from 'path'
 import { IBuildOptions } from "./types/config";
 import { Configuration } from "webpack";
 import { buildPlugins } from './buildPlugins';
