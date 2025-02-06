@@ -1,7 +1,8 @@
+import { IPage } from './page.dto'
 import { MainPageLazy } from '../../pages/main-page'
 import { AboutPageLazy } from '../../pages/about-page'
 
-export const pages = [
+export const pages: IPage[] = [
   {
     path: '/',
     element: <MainPageLazy/>,
