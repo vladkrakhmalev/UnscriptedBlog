@@ -4,18 +4,14 @@
   box-sizing: border-box;
   font: var(--font-m);
   color: var(--text-primary);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .app {
   background-color: var(--bg-primary);
+  min-height: 100vh;
 }
 
 a {
   text-decoration: none;
 }
-
-.app {
-  min-height: 100vh;
-}
-
