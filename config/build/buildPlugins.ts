@@ -3,8 +3,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { IBuildOptions } from './types/config'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-export function buildPlugins({paths, isDev}: IBuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({paths, isDev, isAnalyze}: IBuildOptions): WebpackPluginInstance[] {
   
   return [
     new HtmlWebpackPlugin({
@@ -22,5 +23,6 @@ export function buildPlugins({paths, isDev}: IBuildOptions): WebpackPluginInstan
     new ReactRefreshPlugin({
       overlay: false,
     }),
+    isAnalyze && new BundleAnalyzerPlugin(),
   ]
 }

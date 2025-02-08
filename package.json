@@ -7,6 +7,7 @@
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
+    "analyze": "webpack --env mode=production --env isAnalyze=true",
     "lint:ts": "npx eslint '**/*.{ts,tsx}'",
     "lint:scss": "npx stylelint '**/*.scss'",
     "lint:scss:fix": "npx stylelint --fix '**/*.scss'",
@@ -25,6 +26,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
+    "@types/webpack-bundle-analyzer": "^4.4.1",
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^6.6.0",
     "eslint": "^8.57.1",
@@ -45,6 +47,7 @@
     "typescript": "^4.5.5",
     "typescript-eslint": "^8.23.0",
     "webpack": "^5.69.1",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
