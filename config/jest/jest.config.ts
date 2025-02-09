@@ -15,8 +15,13 @@ export default {
     "json",
     "node"
   ],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+  },
   rootDir: '../../',
   transform: {
-    '^.+\\.ts?$': 'ts-jest', // '^.+\\.(js|jsx|ts|tsx|mjs)$'
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.svg$': 'jest-transformer-svg',
   },
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 };
