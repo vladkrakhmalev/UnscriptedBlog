@@ -15,7 +15,7 @@ export const Header: FC = () => {
 
   return (
     <div className='header'>
-      <Link to="/" className="header__logo">K-Blog</Link>
+      <Link to="/" className="header__logo">Unscripted blog</Link>
 
       <nav className='header__nav'>
         <Link to='/' className='header__nav-link'>{t('Главная')}</Link>
