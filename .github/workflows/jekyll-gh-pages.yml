@@ -39,6 +39,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build:prod
+      - name: Ensure build folder exists
+        run: ls -la ./dist
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
