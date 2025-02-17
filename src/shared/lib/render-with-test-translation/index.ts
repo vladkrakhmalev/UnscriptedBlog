@@ -1,1 +1,0 @@
-export { renderWithTestTranslation } from './renderWithTestTranslation';

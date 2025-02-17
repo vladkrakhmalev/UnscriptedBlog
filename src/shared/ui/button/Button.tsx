@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC, ReactNode, ButtonHTMLAttributes } from 'react';
 import './Button.scss'
 import { clss } from '../../lib/clss';
 
-interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode
-  children?: React.ReactNode | string
+interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  icon?: ReactNode
+  children?: ReactNode | string
   onClick?: () => void
 }
 

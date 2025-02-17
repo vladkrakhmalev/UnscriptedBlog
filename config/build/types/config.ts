@@ -1,10 +1,10 @@
 export type BuildModeType = 'production' | 'development'
 
 export interface IBuildPaths {
-  entry: string
-  build: string
-  html: string
-  src: string
+  entry?: string
+  build?: string
+  html?: string
+  src?: string
 }
 
 export interface IBuildEnv {
