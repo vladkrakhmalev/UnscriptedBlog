@@ -3,8 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font: var(--font-m);
-  color: var(--text-primary);
   transition: 0.2s;
+}
+
+body {
+  color: var(--text-primary);
 }
 
 .app {
@@ -12,6 +15,14 @@
   min-height: 100vh;
 }
 
-a {
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-decoration: none;
+  color: var(--text-primary);
 }
