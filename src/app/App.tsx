@@ -12,11 +12,13 @@ export const App = () => {
   
   return (
     <div className={clss('app', theme)}>
-      <ErrorBoundary errorComponent={<ErrorPage/>}>
-        <Suspense fallback="">
-          <AppRouter/>
-        </Suspense>
-      </ErrorBoundary>
+      <div className="app__container">
+        <ErrorBoundary errorComponent={<ErrorPage/>}>
+          <Suspense fallback="">
+            <AppRouter/>
+          </Suspense>
+        </ErrorBoundary>
+      </div>
     </div>
   )
 }
