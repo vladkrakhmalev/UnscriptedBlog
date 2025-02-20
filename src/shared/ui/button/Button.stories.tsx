@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
+import TranslateIcon from '../../../shared/assets/icons/translate.svg'  
 
 import { Button } from './Button';
 
@@ -22,6 +23,22 @@ export const Primary: Story = {
   },
 };
 
-export const Empty: Story = {
-  args: {},
+export const WithIcon: Story = {
+  args: {
+    children: 'Button',
+    icon: <TranslateIcon/>,
+  },
+};
+
+export const OnlyIcon: Story = {
+  args: {
+    icon: <TranslateIcon/>,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    disabled: true,
+  },
 };
