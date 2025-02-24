@@ -10,14 +10,14 @@
   cursor: pointer;
   transition: 0.3s;
 
-  &:not(:disabled):hover {
-    box-shadow: 0 0 30px var(--shadow-primary);
-    background-color: var(--color-primary-hover);
-  }
-
   &:disabled {
     cursor: default;
     background-color: var(--color-primary-disabled);
+  }
+
+  &:not(:disabled):hover {
+    box-shadow: 0 0 30px var(--shadow-primary);
+    background-color: var(--color-primary-hover);
   }
 
   &._icon {
