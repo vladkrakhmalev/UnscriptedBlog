@@ -37,6 +37,16 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
+      - name: Lint
+        run: |
+          npm run lint:ts
+          npm run lint:scss
+      - name: Build storybook
+        run: npm run storybook:build
+      - name: Test
+        run: |
+          npm run test:unit
+          npm run test:ui
       - name: Build
         run: npm run build:prod
       - name: Ensure build folder exists
