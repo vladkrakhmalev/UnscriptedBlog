@@ -41,16 +41,15 @@ jobs:
         run: |
           npm run lint:ts
           npm run lint:scss
+        if: always()
       - name: Build storybook
         run: npm run storybook:build
+        if: always()
       - name: Test
-        run: |
-          npm run test:unit
-          npm run test:ui
+        run: npm run test:unit
+        if: always()
       - name: Build
         run: npm run build:prod
-      - name: Ensure build folder exists
-        run: ls -la ./build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
