@@ -34,10 +34,6 @@ Your app is ready to be deployed!
 
 Runs the app in the production mode and analyzes the bundle size.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.
-
 ### `npm run lint:ts`
 
 Runs the linter for TypeScript files.
@@ -50,6 +46,26 @@ Runs the linter for SCSS files.
 
 Fixes the linter errors for SCSS files.
 
+### `npm run test:unit`
+
+Runs the unit tests with Jest.
+
+### `npm run test:ui`
+
+Runs the UI tests with Loki.
+
+### `npm run test:ui:ok`
+
+Approves the UI tests with Loki.
+
+### `npm run storybook`
+
+Runs Storybook in development mode.
+
+### `npm run storybook:build`
+
+Builds Storybook to a static site.
+
 ## Used dependencies
 
 The project uses the following dependencies:
@@ -58,8 +74,10 @@ The project uses the following dependencies:
 - [TypeScript](https://www.typescriptlang.org/) for type checking
 - [React Router](https://reactrouter.com/) for client-side routing
 - [i18next](https://www.i18next.com/) for internationalization
+- [Webpack](https://webpack.js.org/) for bundling and building the application
 - [Jest](https://jestjs.io/) for testing JavaScript code
 - [Testing Library](https://testing-library.com/) for testing React components
+- [Storybook](https://storybook.js.org/) for developing and testing UI components in isolation
+- [Loki](https://loki.js.org/) for visual regression testing
 - [ESLint](https://eslint.org/) for JavaScript linting
 - [Stylelint](https://stylelint.io/) for SCSS linting
-- [Webpack](https://webpack.js.org/) for bundling and building the application
