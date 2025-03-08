@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, MouseEvent, ReactNode, useEffect, useState } from 'react';
 import './Modal.scss'
 
 interface IProps {
@@ -23,6 +23,10 @@ export const Modal: FC<IProps> = props => {
     if (onClose) onClose()
   }
 
+  const handlerContainerClick = (event: MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation()
+  }
+
   useEffect(() => {
     setIsOpen(isOpenDefault)
   }, [isOpenDefault])
@@ -38,7 +42,7 @@ export const Modal: FC<IProps> = props => {
       }
 
       <div className='modal__wrapper' onClick={handlerClose}>
-        <div className='modal__container'>
+        <div className='modal__container' onClick={handlerContainerClick}>
           <div className='modal__head'>
             <div className='modal__close' onClick={handlerClose}>x</div>
           </div>
