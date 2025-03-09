@@ -1,4 +1,4 @@
-import { FC, MouseEvent, ReactNode, useEffect, useState } from 'react';
+import { FC, MouseEvent, ReactNode, useEffect, useMemo, useState } from 'react';
 import './Modal.scss'
 
 interface IProps {
@@ -31,7 +31,9 @@ export const Modal: FC<IProps> = props => {
     setIsOpen(isOpenDefault)
   }, [isOpenDefault])
 
-  if (!isOpen) return
+  const wrapperClasses = useMemo(() => {
+    return clss('modal__wrapper', {_open: isOpen})
+  }, [isOpen])
 
   return (
     <div className='modal'>
@@ -41,7 +43,7 @@ export const Modal: FC<IProps> = props => {
         </div>
       }
 
-      <div className='modal__wrapper' onClick={handlerClose}>
+      <div className={wrapperClasses} onClick={handlerClose}>
         <div className='modal__container' onClick={handlerContainerClick}>
           <div className='modal__head'>
             <div className='modal__close' onClick={handlerClose}>x</div>

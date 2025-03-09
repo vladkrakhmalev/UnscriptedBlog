@@ -11,6 +11,14 @@
     align-items: center;
     justify-items: center;
     padding: 40px;
+    transition: 0.2s;
+    z-index: -1;
+    opacity: 0;
+
+    &._open {
+      z-index: 10;
+      opacity: 1;
+    }
   }
 
   &__container {
@@ -20,6 +28,14 @@
     border-radius: 10px;
     padding: 20px;
     position: relative;
+    transform: scale(0.9) translate(0, 20px);
+    opacity: 0;
+    transition: 0.2s;
+  }
+
+  &__wrapper._open &__container {
+    transform: scale(1);
+    opacity: 1;
   }
 
   &__close {
