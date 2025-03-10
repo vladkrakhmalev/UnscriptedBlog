@@ -1,9 +1,11 @@
 import { FC, MouseEvent, ReactNode, useEffect, useMemo, useState } from 'react';
 import './Modal.scss'
+import { clss } from '../../../../src/shared/lib/clss';
 
 interface IProps {
   isOpen?: boolean
   trigger?: ReactNode
+  title?: string | ReactNode
   children?: ReactNode
   onClose?: () => void
 }
@@ -12,6 +14,7 @@ export const Modal: FC<IProps> = props => {
   const { 
     isOpen: isOpenDefault = false,
     trigger,
+    title,
     children,
     onClose
   } = props
@@ -31,6 +34,10 @@ export const Modal: FC<IProps> = props => {
     setIsOpen(isOpenDefault)
   }, [isOpenDefault])
 
+  const headClasses = useMemo(() => {
+    return clss('modal__head', {'_without-title': !title})
+  }, [title])
+
   const wrapperClasses = useMemo(() => {
     return clss('modal__wrapper', {_open: isOpen})
   }, [isOpen])
@@ -45,7 +52,10 @@ export const Modal: FC<IProps> = props => {
 
       <div className={wrapperClasses} onClick={handlerClose}>
         <div className='modal__container' onClick={handlerContainerClick}>
-          <div className='modal__head'>
+          <div className={headClasses}>
+            <span className="modal__title">
+              {title}
+            </span>
             <div className='modal__close' onClick={handlerClose}>x</div>
           </div>
           <div className='modal__body'>

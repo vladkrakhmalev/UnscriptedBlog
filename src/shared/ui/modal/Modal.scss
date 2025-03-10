@@ -38,6 +38,24 @@
     opacity: 1;
   }
 
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &._without-title {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
   &__close {
     width: 20px;
     height: 20px;
