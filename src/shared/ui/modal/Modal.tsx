@@ -7,6 +7,7 @@ interface IProps {
   trigger?: ReactNode
   title?: string | ReactNode
   children?: ReactNode
+  closeOnWrapper?: boolean
   onClose?: () => void
 }
 
@@ -16,6 +17,7 @@ export const Modal: FC<IProps> = props => {
     trigger,
     title,
     children,
+    closeOnWrapper = true,
     onClose
   } = props
 
@@ -28,6 +30,10 @@ export const Modal: FC<IProps> = props => {
 
   const handlerContainerClick = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
+  }
+
+  const handlerWrapperClick = () => {
+    if (closeOnWrapper) handlerClose()
   }
 
   useEffect(() => {
@@ -50,7 +56,7 @@ export const Modal: FC<IProps> = props => {
         </div>
       }
 
-      <div className={wrapperClasses} onClick={handlerClose}>
+      <div className={wrapperClasses} onClick={handlerWrapperClick}>
         <div className='modal__container' onClick={handlerContainerClick}>
           <div className={headClasses}>
             <span className="modal__title">
