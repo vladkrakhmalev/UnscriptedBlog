@@ -11,7 +11,7 @@ export const App = () => {
   const {theme} = useTheme()
   
   return (
-    <div className={clss('app', theme)}>
+    <div id='app' className={clss('app', theme)}>
       <div className="app__container">
         <ErrorBoundary errorComponent={<ErrorPage/>}>
           <Suspense fallback="">

@@ -1,6 +1,7 @@
 import { FC, MouseEvent, ReactNode, useEffect, useMemo, useState } from 'react';
 import './Modal.scss'
 import { clss } from '../../../../src/shared/lib/clss';
+import { Portal } from '../../providers/portal';
 
 interface IProps {
   isOpen?: boolean
@@ -56,19 +57,21 @@ export const Modal: FC<IProps> = props => {
         </div>
       }
 
-      <div className={wrapperClasses} onClick={handlerWrapperClick}>
-        <div className='modal__container' onClick={handlerContainerClick}>
-          <div className={headClasses}>
-            <span className="modal__title">
-              {title}
-            </span>
-            <div className='modal__close' onClick={handlerClose}>x</div>
-          </div>
-          <div className='modal__body'>
-            {children}
+      <Portal selector='#app'>
+        <div className={wrapperClasses} onClick={handlerWrapperClick}>
+          <div className='modal__container' onClick={handlerContainerClick}>
+            <div className={headClasses}>
+              <span className='modal__title'>
+                {title}
+              </span>
+              <div className='modal__close' onClick={handlerClose}>x</div>
+            </div>
+            <div className='modal__body'>
+              {children}
+            </div>
           </div>
         </div>
-      </div>
+      </Portal>
     </div>
   );
 };
