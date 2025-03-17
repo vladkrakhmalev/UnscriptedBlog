@@ -5,19 +5,39 @@
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
-  background-color: var(--color-primary);
-  color: var(--text-light);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 
   &:disabled {
     cursor: default;
-    background-color: var(--color-primary-disabled);
   }
 
-  &:not(:disabled):hover {
-    box-shadow: 0 0 30px var(--shadow-primary);
-    background-color: var(--color-primary-hover);
+  &._primary {
+    background-color: var(--color-primary);
+    color: var(--text-light);
+
+    &:disabled {
+      background-color: var(--color-primary-disabled);
+    }
+
+    &:not(:disabled):hover {
+      box-shadow: 0 0 30px var(--shadow-primary);
+      background-color: var(--color-primary-hover);
+    }
+  }
+
+  &._secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+
+    &:disabled {
+      color: var(--text-secondary);
+    }
+
+    &:not(:disabled):hover {
+      box-shadow: 0 0 30px var(--bg-secondary-active);
+      background-color: var(--bg-secondary-active);
+    }
   }
 
   &._icon {

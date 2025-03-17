@@ -23,6 +23,13 @@ export const Primary: Story = {
   },
 };
 
+export const Secondary: Story = {
+  args: {
+    children: 'Button',
+    variant: 'secondary',
+  },
+};
+
 export const WithIcon: Story = {
   args: {
     children: 'Button',

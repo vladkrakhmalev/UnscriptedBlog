@@ -12,4 +12,9 @@ describe('Button', () => {
     render(<Button icon={<SunIcon/>}>TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('_icon')
   })
+
+  test('test secondary', () => {
+    render(<Button variant="secondary">TEST</Button>)
+    expect(screen.getByText('TEST')).toHaveClass('_secondary')
+  })
 })
