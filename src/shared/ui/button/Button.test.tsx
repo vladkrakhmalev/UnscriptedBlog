@@ -17,4 +17,9 @@ describe('Button', () => {
     render(<Button variant="secondary">TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('_secondary')
   })
+
+  test('test disabled', () => {
+    render(<Button disabled>TEST</Button>)
+    expect(screen.getByText('TEST')).toBeDisabled()
+  })
 })
