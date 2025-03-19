@@ -5,8 +5,10 @@ import { useTheme } from '../../../shared/lib/theme';
 import { Button } from '../../../shared/ui/button';
 import SunIcon from '../../../shared/assets/icons/sun.svg'  
 import TranslateIcon from '../../../shared/assets/icons/translate.svg'  
+import LoginIcon from '../../../shared/assets/icons/login.svg'  
 import { useI18n } from '../../../shared/lib/i18n';
 import { useTranslation } from 'react-i18next';
+import { Modal } from '../../../shared/ui/modal';
 
 export const Header: FC = () => {
   const { t } = useTranslation()
@@ -25,13 +27,19 @@ export const Header: FC = () => {
       <div className="header__btns">
         <Button
           icon={<SunIcon/>}
+          variant='secondary'
           onClick={toggleTheme}
         />
         
         <Button
           icon={<TranslateIcon/>}
+          variant='secondary'
           onClick={toggleLang}
         />
+
+        <Modal trigger={<Button icon={<LoginIcon/>}>{t('Войти')}</Button>}>
+          Модальное окно для формы входа и регистрации
+        </Modal>
       </div>
     </div>
   );
